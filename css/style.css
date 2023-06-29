@@ -42,6 +42,7 @@ html {
 
 }
 nav {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,10 +57,25 @@ nav {
   font-size: 20pt;
   padding: 2em;
 }
-.body-padding{
-  height: 200vh;
- 
+body {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url(/img/5053309.jpg);
+  background-repeat: repeat-y;
+
+
 }
+main{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
 
 
 ul {
@@ -73,13 +89,7 @@ ul {
 }
 
 
-body {
-  margin: 0;
-  padding: 0;
-  background: url(/img/5053309.jpg);
-  z-index: -999;
-  
-}
+
 
 .bord-rad{
   border-radius: 50%;
@@ -184,18 +194,20 @@ body {
   background-color: black;
   border: 1px solid grey;
 
+
 }
 
 .album {
+  width: 100%;
   list-style-type: none;
   border: orange solid 1px;
-  width: 100vw;
-  height: 20em;
+  width: 80vw;
   padding: 10rem;
 }
 .links {
   display:flex;
-  width: 80vw;
+  width: 100%;
+  height: 100%;
 }
 .padding{
   padding-right: 1rem;
@@ -212,12 +224,62 @@ body {
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media only screen and (min-width: 857px) and (max-width: 1300px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .lead {
+    width: 72%;
+  }
+}
+@media (max-width: 856px) {
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+  }
+
+  .dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .looper {
+    visibility: hidden;
+    
+  }
+  .album {
+    width: 100%;
+    list-style-type: none;
+    width: 80vw;
+  }
+  
+  footer {
+   visibility: hidden;
+  }
+}
+
 @media screen and (max-width: 600px) {
 
   column,
   input[type=submit] {
     width: 100%;
     margin-top: 0;
+
+    display: flex;
+    flex-direction: column;
   }
 }
 
